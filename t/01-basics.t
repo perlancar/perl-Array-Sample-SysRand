@@ -58,5 +58,27 @@ subtest "basics" => sub {
     );
 };
 
+subtest "opt:pos=1" => sub {
+    sample_sysrand_ok(
+        [[qw/a b c d/], 1, {pos=>1}],
+        [
+            [0],
+            [1],
+            [2],
+            [3],
+        ],
+    );
+
+    sample_sysrand_ok(
+        [[qw/a b c d/], 2, {pos=>1}],
+        [
+            [0,2],
+            [1,3],
+            [2,0],
+            [3,1],
+        ],
+    );
+};
+
 DONE_TESTING:
 done_testing;
