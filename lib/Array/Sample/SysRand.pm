@@ -79,6 +79,6 @@ About systematic (random) sampling:
 L<https://www.investopedia.com/terms/s/systematic-sampling.asp>
 
 Other sampling methods: L<Array::Sample::Partition>,
-L<Array::Sample::SimpleRandom>
+L<Array::Sample::SimpleRandom>, L<Array::Sample::WeightedRandom>
 
 =cut
