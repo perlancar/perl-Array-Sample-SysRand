@@ -1,13 +1,16 @@
 package Array::Sample::SysRand;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
 
 use Exporter qw(import);
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
+
 our @EXPORT_OK = qw(sample_sysrand);
 
 sub sample_sysrand {
@@ -36,7 +39,11 @@ sub sample_sysrand {
 
  use Array::Sample::SysRand qw(sample_sysrand);
 
- sample_partition([0,1,2,3,4,5,6,7,8,9], 5); => (5, 7, 9, 1, 3)
+ sample_sysrand([0,1,2,3,4,5,6,7,8,9], 5); => (5, 7, 9, 1, 3)
+ sample_sysrand([0,1,2,3,4,5,6,7,8,9], 5); => (2, 4, 6, 8, 0)
+
+ sample_sysrand([0,1,2,3,4,5,6,7,8,9], 3); => (2, 6, 9)
+ sample_sysrand([0,1,2,3,4,5,6,7,8,9], 3); => (4, 8, 1)
 
 
 =head1 DESCRIPTION
@@ -60,9 +67,18 @@ If set to true, will return positions instead of the elements.
 
 =back
 
+The function takes an array reference (C<\@ary>) and the number of samples
+requested (C<$n>) and will return a list of samples. It will start from a random
+position to get the first sample then jump at fixed interval to get the
+subsequent ones.
+
 
 =head1 SEE ALSO
 
-L<Array::Sample::Partition>
+About systematic (random) sampling:
+L<https://www.investopedia.com/terms/s/systematic-sampling.asp>
+
+Other sampling methods: L<Array::Sample::Partition>,
+L<Array::Sample::SimpleRandom>
 
 =cut
