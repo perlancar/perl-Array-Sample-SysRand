@@ -48,6 +48,8 @@ sub sample_sysrand {
 
 =head1 DESCRIPTION
 
+Keywords: systematic sampling, interval sampling.
+
 
 =head1 FUNCTIONS
 
